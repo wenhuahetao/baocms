@@ -1,0 +1,3 @@
+<?php
+//000000086400a:5:{i:1;a:5:{s:7:"cate_id";s:1:"1";s:9:"cate_name";s:12:"休闲零食";s:9:"parent_id";s:1:"0";s:7:"orderby";s:1:"1";s:4:"rate";s:2:"40";}i:2;a:5:{s:7:"cate_id";s:1:"2";s:9:"cate_name";s:16:"糖果/巧克力";s:9:"parent_id";s:1:"1";s:7:"orderby";s:1:"1";s:4:"rate";s:2:"23";}i:3;a:5:{s:7:"cate_id";s:1:"3";s:9:"cate_name";s:9:"巧克力";s:9:"parent_id";s:1:"2";s:7:"orderby";s:1:"1";s:4:"rate";s:2:"19";}i:4;a:5:{s:7:"cate_id";s:1:"4";s:9:"cate_name";s:6:"手机";s:9:"parent_id";s:1:"0";s:7:"orderby";s:1:"2";s:4:"rate";s:2:"68";}i:5;a:5:{s:7:"cate_id";s:1:"5";s:9:"cate_name";s:12:"苹果手机";s:9:"parent_id";s:1:"4";s:7:"orderby";s:1:"3";s:4:"rate";s:2:"62";}}
+?>

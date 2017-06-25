@@ -1,0 +1,223 @@
+
+<include  file='public:header'/>
+	<header class="top-fixed bg-yellow bg-inverse">
+		<div class="top-back">
+			<a class="top-addr" href="<{:U('tieba/index')}>"><i class="icon-angle-left"></i></a>
+		</div>
+		<div class="top-title">
+			发表帖子
+		</div>
+		<div class="top-share">
+			<a href="<{:U('tieba/main')}>" id="cate-btn"><i class="icon-bars"></i></a>
+		</div>
+	</header>
+	<form class="post-form" action="<{:U('tieba/post',array('cat'=>$cate[cate_id]))}>" method="post" target="x-frame" >
+		<input type="hidden" id="photo" name="data[photo]" />
+		<input type="hidden" name="data[safecode]" value="<{$safecode}>" />
+		<div class="line border-bottom">
+			<div class="x9 form-title">
+				<select name="cat">
+					<option value="">选择分类</option>
+					<foreach name="sharecatess" key="k" index="index" item="item">
+					<if condition="$item['parent_id'] neq 0">
+					<option value="<{$item['cate_id']}>"><{$item['cate_name']}></option>
+					</if>
+					</foreach>
+				</select>
+			</div>
+		</div>
+		<div class="line border-bottom">
+			<div class="x9 form-title">
+				<input type="text" name="data[title]" value="" placeholder="请输入标题"  />
+			</div>
+			<div class="x3 text-right">
+				<button class="button bg-green margin-small-right" type="submit">发表</button>
+			</div>
+		</div>
+		<div class="line border-bottom">
+			<textarea class="form-content" name="data[contents]" placeholder="文明上网，登陆发言"></textarea>
+		</div>
+		<div class="blank-10 clearfix"></div>
+		<div class="container">
+        
+        
+        <div id="photo-panel" class="photo-panel">
+					<!--引入JS-->
+					<script src="/static/default/mobile/js/uploader.js"></script>
+					<ul id="photo-list" class="ui-grid-halve photo-list">
+						<li id="photo-pick" class="photo-pick">添加图片</li>
+                        <span class="ui-border-r" id="show-photo">上传图片</span>
+					</ul>
+				</div>
+                
+                
+                
+			<script>
+		// 文件上传
+		function upload() {
+			var $ = jQuery,
+				$list = $('#photo-list'),
+				$btn = $('#photo-pick'),
+				state = 'pending',
+				// 优化retina, 在retina下这个值是2
+				ratio = window.devicePixelRatio || 1,
+
+				// 缩略图大小
+				thumbnailWidth = 100 * ratio,
+				thumbnailHeight = 100 * ratio,
+				uploader;
+	
+	
+			var uploader = WebUploader.create({
+				server: "<{:U("app/upload/upload",array('model'=>'tieba'))}>",
+				pick: '#photo-pick',
+				resize: false,
+				auto:true,
+				accept: {
+					title: 'Images',
+					extensions: 'gif,jpg,jpeg,png',
+					mimeTypes: 'image/*'
+				},
+				compress:{
+					width: 1000,
+					height: 1000,
+					quality: 90,
+					allowMagnify: false,
+					crop: false,
+					preserveHeaders: true,
+					noCompressIfLarger: true,
+					compressSize:0
+				}
+			});
+
+		
+		
+			// 当有文件添加进来的时候
+			uploader.on( 'fileQueued', function( file ) {
+				var $li = $('<li id="' + file.id + '" >' +
+						   ' <div class="ui-grid-halve-img">'+
+							   '<img>'+
+							'</div>'+
+					   '</li>'),
+					$img = $li.find('img');
+
+
+				// $list为容器jQuery实例
+				$list.prepend( $li );
+
+				// 创建缩略图
+				// 如果为非图片文件，可以不用调用此方法。
+				// thumbnailWidth x thumbnailHeight 为 100 x 100
+				uploader.makeThumb( file, function( error, src ) {
+					if ( error ) {
+						$img.replaceWith('<span>不能预览</span>');
+						return;
+					}
+
+					$img.attr( 'src', src );
+				}, thumbnailWidth, thumbnailHeight );
+			});
+			
+			
+			// 文件上传过程中创建进度条实时显示。
+			uploader.on( 'uploadProgress', function( file, percentage ) {
+				var $li = $( '#'+file.id ),
+					$percent = $li.find('.ui-progress span');
+
+				// 避免重复创建
+				if ( !$percent.length ) {
+					$percent = $('<div class="ui-progress"><span></span></div>')
+							.appendTo( $li )
+							.find('span');
+				}
+
+				$percent.css( 'width', percentage * 100 + '%' );
+			});
+			
+			
+			
+			// 文件上传成功，给item添加成功class, 用样式标记上传成功。
+			uploader.on( 'uploadSuccess', function( file,response ) {
+				$( '#'+file.id ).find('.ui-grid-halve-img ').addClass('ui-tag-selected');
+				$( '#'+file.id ).append('<input type="hidden" name="photo[]" value="'+response._raw+'" />');
+
+			});
+			
+			
+			// 文件上传失败，现实上传出错。
+			uploader.on( 'uploadError', function( file ) {
+				error('上传失败');
+			});
+
+			// 完成上传完了，成功或者失败，先删除进度条。
+			uploader.on( 'uploadComplete', function( file ) {
+				$( '#'+file.id ).find('.ui-progress').remove();
+			});
+
+			
+		};
+	
+
+		$("#smile-slider a").click(function(){
+			html = $("#editor").val() +"(#" + decodeURIComponent($(this).attr("data-smile"))+")";
+			$("#editor").val(html);
+		});
+		
+		$("#font-slider a").click(function(){
+			html = $("#editor").val() +$(this).html()+" ";
+			$("#editor").val(html);
+		});
+
+
+		
+		$("#show-font").click(function(){
+			$("#font-slider").show();
+			var font = new fz.Scroll('#font-slider', {
+				scrollY: false,
+				scrollX: true
+			});
+
+			$("#smile-slider").hide();
+			$("#photo-panel").hide();
+			
+		});
+		
+		
+		$("#show-smile").click(function(){
+			$("#smile-slider").show();
+			var smile = new fz.Scroll('#smile-slider', {
+				scrollY: false,
+				scrollX: true
+			});
+
+			$("#font-slider").hide();
+			$("#photo-panel").hide();
+		});
+		
+		
+		$("#show-delete").click(function(){
+			str = $("#editor").val();
+			str = str.substring(0,str.length-1);
+			$("#editor").val(str);
+		});
+		
+		$("#show-photo").click(function(){
+			$("#photo-panel").show();
+			if($(".webuploader-container").length == 0){
+				upload();
+			}
+			$("#smile-slider").hide();
+			$("#font-slider").hide();
+		});
+		
+		$("#topic-btn").click(function(){
+			$("#topic-form").submit();
+		
+		});
+
+	</script>
+		</div>
+	</form>
+	
+
+<include  file='public:footer'/> 

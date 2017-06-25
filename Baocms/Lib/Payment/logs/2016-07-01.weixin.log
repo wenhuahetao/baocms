@@ -1,0 +1,90 @@
+[2016-07-01 11:38:12][debug] native 异步通知begin
+[2016-07-01 11:38:12][debug] native verify right!
+[2016-07-01 11:38:12][debug] native return_code  result_code SUCCESS!
+[2016-07-01 11:38:12][debug] native更新未支付日志！
+[2016-07-01 11:38:12][debug] native money right!
+[2016-07-01 11:38:12][debug] native成功写入支付日志！
+[2016-07-01 11:38:22][debug] native 异步通知begin
+[2016-07-01 11:38:22][debug] native verify right!
+[2016-07-01 11:38:22][debug] native return_code  result_code SUCCESS!
+[2016-07-01 11:38:41][debug] native 异步通知begin
+[2016-07-01 11:38:41][debug] native verify right!
+[2016-07-01 11:38:41][debug] native return_code  result_code SUCCESS!
+[2016-07-01 11:39:16][debug] native 异步通知begin
+[2016-07-01 11:39:16][debug] native verify right!
+[2016-07-01 11:39:16][debug] native return_code  result_code SUCCESS!
+[2016-07-01 11:42:29][debug] native 异步通知begin
+[2016-07-01 11:42:29][debug] native verify right!
+[2016-07-01 11:42:29][debug] native return_code  result_code SUCCESS!
+[2016-07-01 12:12:23][debug] native 异步通知begin
+[2016-07-01 12:12:23][debug] native verify right!
+[2016-07-01 12:12:23][debug] native return_code  result_code SUCCESS!
+[2016-07-01 12:42:33][debug] native 异步通知begin
+[2016-07-01 12:42:33][debug] native verify right!
+[2016-07-01 12:42:33][debug] native return_code  result_code SUCCESS!
+[2016-07-01 12:57:01][debug] native 异步通知begin
+[2016-07-01 12:57:01][debug] native verify right!
+[2016-07-01 12:57:01][debug] native return_code  result_code SUCCESS!
+[2016-07-01 12:57:01][debug] native更新未支付日志！
+[2016-07-01 12:57:01][debug] native money right!
+[2016-07-01 12:57:01][debug] native成功写入支付日志！
+[2016-07-01 12:57:19][debug] native 异步通知begin
+[2016-07-01 12:57:19][debug] native verify right!
+[2016-07-01 12:57:19][debug] native return_code  result_code SUCCESS!
+[2016-07-01 12:57:38][debug] native 异步通知begin
+[2016-07-01 12:57:38][debug] native verify right!
+[2016-07-01 12:57:38][debug] native return_code  result_code SUCCESS!
+[2016-07-01 12:58:13][debug] native 异步通知begin
+[2016-07-01 12:58:13][debug] native verify right!
+[2016-07-01 12:58:13][debug] native return_code  result_code SUCCESS!
+[2016-07-01 13:01:27][debug] native 异步通知begin
+[2016-07-01 13:01:27][debug] native verify right!
+[2016-07-01 13:01:27][debug] native return_code  result_code SUCCESS!
+[2016-07-01 13:12:37][debug] native 异步通知begin
+[2016-07-01 13:12:37][debug] native verify right!
+[2016-07-01 13:12:37][debug] native return_code  result_code SUCCESS!
+[2016-07-01 13:41:54][debug] native 异步通知begin
+[2016-07-01 13:41:54][debug] native verify right!
+[2016-07-01 13:41:54][debug] native return_code  result_code SUCCESS!
+[2016-07-01 14:01:17][debug] native 异步通知begin
+[2016-07-01 14:01:17][debug] native verify right!
+[2016-07-01 14:01:17][debug] native return_code  result_code SUCCESS!
+[2016-07-01 14:01:17][debug] native成功写入支付日志！
+[2016-07-01 14:22:52][debug] native 异步通知begin
+[2016-07-01 14:22:52][debug] native verify right!
+[2016-07-01 14:22:52][debug] native return_code  result_code SUCCESS!
+[2016-07-01 14:22:52][debug] native更新未支付日志！
+[2016-07-01 14:22:52][debug] native money right!
+[2016-07-01 14:22:52][debug] native成功写入支付日志！
+[2016-07-01 14:23:07][debug] native 异步通知begin
+[2016-07-01 14:23:07][debug] native verify right!
+[2016-07-01 14:23:07][debug] native return_code  result_code SUCCESS!
+[2016-07-01 14:23:24][debug] native 异步通知begin
+[2016-07-01 14:23:24][debug] native verify right!
+[2016-07-01 14:23:24][debug] native return_code  result_code SUCCESS!
+[2016-07-01 14:23:57][debug] native 异步通知begin
+[2016-07-01 14:23:57][debug] native verify right!
+[2016-07-01 14:23:57][debug] native return_code  result_code SUCCESS!
+[2016-07-01 14:26:59][debug] native 异步通知begin
+[2016-07-01 14:26:59][debug] native verify right!
+[2016-07-01 14:26:59][debug] native return_code  result_code SUCCESS!
+[2016-07-01 14:31:17][debug] native 异步通知begin
+[2016-07-01 14:31:17][debug] native verify right!
+[2016-07-01 14:31:17][debug] native return_code  result_code SUCCESS!
+[2016-07-01 14:31:17][debug] native更新未支付日志！
+[2016-07-01 14:41:51][debug] native 异步通知begin
+[2016-07-01 14:41:51][debug] native verify right!
+[2016-07-01 14:41:51][debug] native return_code  result_code SUCCESS!
+[2016-07-01 14:41:51][debug] native更新未支付日志！
+[2016-07-01 23:03:05][debug] native 异步通知begin
+[2016-07-01 23:03:05][debug] native verify right!
+[2016-07-01 23:03:05][debug] native return_code  result_code SUCCESS!
+[2016-07-01 23:03:05][debug] native更新未支付日志！
+[2016-07-01 23:03:05][debug] native money right!
+[2016-07-01 23:03:05][debug] native成功写入支付日志！
+[2016-07-01 23:03:18][debug] native 异步通知begin
+[2016-07-01 23:03:18][debug] native verify right!
+[2016-07-01 23:03:18][debug] native return_code  result_code SUCCESS!
+[2016-07-01 23:03:37][debug] native 异步通知begin
+[2016-07-01 23:03:37][debug] native verify right!
+[2016-07-01 23:03:37][debug] native return_code  result_code SUCCESS!

@@ -1,0 +1,3 @@
+<?php
+//000000007200a:2:{i:0;a:11:{s:5:"ad_id";s:3:"178";s:7:"site_id";s:2:"57";s:7:"city_id";s:1:"0";s:5:"title";s:12:"手机首页";s:8:"link_url";s:20:"http://www.haoid.cn/";s:5:"photo";s:28:"2016/05/22/57412eaf51f18.png";s:4:"code";s:0:"";s:7:"bg_date";s:10:"2015-12-20";s:8:"end_date";s:10:"2019-12-25";s:6:"closed";s:1:"0";s:7:"orderby";s:1:"0";}i:1;a:11:{s:5:"ad_id";s:3:"191";s:7:"site_id";s:2:"57";s:7:"city_id";s:1:"0";s:5:"title";s:12:"草鱼火锅";s:8:"link_url";s:20:"http://www.haoid.cn/";s:5:"photo";s:28:"2016/05/22/57412ea1958ab.png";s:4:"code";s:0:"";s:7:"bg_date";s:10:"2016-04-25";s:8:"end_date";s:10:"2019-05-01";s:6:"closed";s:1:"0";s:7:"orderby";s:1:"0";}}
+?>

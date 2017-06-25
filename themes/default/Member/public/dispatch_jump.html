@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>出错了！用户中心</title>        
+        <link href="__TMPL__statics/css/newstyle.css" rel="stylesheet" type="text/css" />
+        <link href="themes/default/statics/css/style.css" rel="stylesheet" type="text/css" />
+        <script src="__TMPL__statics/js/jquery.js"></script>
+        <script> var BAO_PUBLIC = '__PUBLIC__';
+            var BAO_ROOT = '__ROOT__';</script>
+        <script src="__PUBLIC__/js/web.js"></script>
+        <script src="__PUBLIC__/js/layer/layer.js"></script>
+        <script>
+        </script>
+    </head>
+    <body>
+
+        <iframe id="baocms_frm" name="baocms_frm" style="display:none;"></iframe>
+        <include file="./themes/default/Pchome/public/topOne.html" />
+        <include file="./themes/default/Pchome/public/top.html" />        
+        <include file="./themes/default/Pchome/public/nav2.html" />
+
+        <div class="czts">
+            <present name="message">
+                <div class="cztsnr"><?php echo($message); ?><p class="czts_p">页面自动 跳转中   等待时间：<span class="czts_time" id="czts_time"></span></p></div>
+                <else/>
+                <div class="cztsnr cztsnr_Failure"><?php echo($error); ?><p class="czts_p">页面自动 跳转中   等待时间：<span class="czts_time" id="czts_time"></span></p></div>
+            </present>
+        </div>
+        <script language="javascript">
+            Load("<?php echo($jumpUrl); ?>"); //要跳转到的页面 
+        </script> 
+
+
+
+        <include  file='public:footer'/>   

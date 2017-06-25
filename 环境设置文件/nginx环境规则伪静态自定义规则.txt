@@ -1,0 +1,4 @@
+
+如果是nginx配置环境，请将下列代码填写到自定义伪静态规则。
+
+http://www.ituiz.com/thread-11988-1-5.html

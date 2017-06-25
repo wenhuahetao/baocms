@@ -1,0 +1,2 @@
+按照这个方法安装伪静态IIS6.0
+http://www.52jscn.com/web/2015/12/9001.shtml

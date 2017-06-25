@@ -1,0 +1,72 @@
+<include  file='public:header'/>
+<div class="mainBt">
+    <ul>
+        <li class="li1">功能</li>
+        <li class="li2">PC功能</li>
+        <li class="li2 li3">功能列表</li>
+    </ul>
+</div>
+<style>tr td input{text-align: center;}</style>
+<div class="main-jsgl main-sc">
+    <p class="attention"><span>注意：功能的链接是默认的，最好不要随意改动,系统功能建议不要随意操作，当然，您也操作不了，只有设置为非系统功能后才能操作</span> </p>
+    <div class="jsglNr">
+        <div class="selectNr" style="margin-top: 0px; border-top:none;">
+            <div class="right">
+               <{:BA('pcfunction/create','','添加功能','load','remberBtn',600,400)}>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <form action="<{:U('pcfunction/update')}>" target="baocms_frm" method="post">
+            <div class="tableBox">
+                <table class="jq_table" bordercolor="#dbdbdb" cellspacing="0" width="100%" border="1px"  style=" border-collapse: collapse; margin:0px; vertical-align:middle; background-color:#FFF;"  >
+                    <tr class="jq_tr">
+                        <td class="w50"><input type="checkbox" class="checkAll" rel="function_id" /></td>
+                        <td>标题</td>
+                        <td>链接</td>
+                        <td>是否显示</td>
+                        <td>是否导航显示</td>
+                        <td>是否系统功能</td>
+                        <td>排序</td>
+                        <td class="w450">操作</td>
+                    <foreach name="list" item="item">
+                        <if condition="$item['is_system'] eq 1">
+                            <tr>
+                            <td><input class="child_function_id" type="checkbox" name="function_id[]" value="<{$item.function_id}>" /> </td>    
+                            <td><{$item.title}></td>
+                            <td><{$item.url}></td>
+                            <td><if condition="$item['is_show'] eq 1"><span style="color:green;">显示</span><else/><span style="color:red;">不显示</span></if></td>
+                        <td><if condition="$item['is_nav'] eq 1"><span style="color:green;">导航显示</span><else/><span style="color:red;">导航不显示</span></if></td>
+                            <td><span style="color:green;">是</span></td>
+                            <td><{$item.orderby}></td>
+                            <td>
+                            <if condition="$item['is_show'] eq 1"><{:BA('pcfunction/closed',array("function_id"=>$item["function_id"]),'不显示','act','remberBtn')}><else/><{:BA('pcfunction/show',array("function_id"=>$item["function_id"]),'显示','act','remberBtn')}></if>
+                            <if condition="$item['is_nav'] eq 1"><{:BA('pcfunction/navoff',array("function_id"=>$item["function_id"]),'导航不显示','act','remberBtn')}><else/><{:BA('pcfunction/navon',array("function_id"=>$item["function_id"]),'导航显示','act','remberBtn')}></if>
+                            <if condition="$item['is_system'] eq 1"><{:BA('pcfunction/cancel',array("function_id"=>$item["function_id"]),'取消系统功能','act','remberBtn')}><else/><{:BA('pcfunction/system',array("function_id"=>$item["function_id"]),'设为系统功能','act','remberBtn')}></if>
+                            </td>
+                            </tr>
+                        <else/>
+                            <tr>
+                                <td><input class="child_function_id" type="checkbox" name="function_id[]" value="<{$item.function_id}>" /> </td>
+                                <td><input type="text" class="scAddTextName w150" name="data[<{$item.function_id}>][title]" value="<{$item.title}>"></td>
+                            <td><input type="text" class="scAddTextName w150" name="data[<{$item.function_id}>][url]" value="<{$item.url}>"></td>
+                            <td><label style="display: inline-block; margin-left: 20px;"><input type="radio" name="data[<{$item.function_id}>][is_show]" <eq name="item['is_show']" value="1">checked="checked"</eq> value="1"><span style="color:green;">显示</span></label><label style="display: inline-block; margin-left: 20px;"><input type="radio" name="data[<{$item.function_id}>][is_show]" value="0" <eq name="item['is_show']" value="0">checked="checked"</eq> ><span style="color:red;">不显示</span></label></td>
+                            <td><label style="display: inline-block; margin-left: 20px;"><input type="radio" name="data[<{$item.function_id}>][is_nav]" <eq name="item['is_nav']" value="1">checked="checked"</eq> value="1"><span style="color:green;">导航显示</span></label><label style="display: inline-block; margin-left: 20px;"><input type="radio" <eq name="item['is_nav']" value="0">checked="checked"</eq> name="data[<{$item.function_id}>][is_nav]" value="0"><span style="color:red;">导航不显示</span></label></td>
+                            <td><span style="color:red;">否</span></td>
+                            <td><input type="text" class="scAddTextName w150" name="data[<{$item.function_id}>][orderby]" value="<{$item.orderby}>"></td>
+                            <td>
+                                <if condition="$item['is_show'] eq 1"><{:BA('pcfunction/closed',array("function_id"=>$item["function_id"]),'不显示','act','remberBtn')}><else/><{:BA('pcfunction/show',array("function_id"=>$item["function_id"]),'显示','act','remberBtn')}></if>
+                                <if condition="$item['is_nav'] eq 1"><{:BA('pcfunction/navoff',array("function_id"=>$item["function_id"]),'导航不显示','act','remberBtn')}><else/><{:BA('pcfunction/navon',array("function_id"=>$item["function_id"]),'导航显示','act','remberBtn')}></if>
+                                <if condition="$item['is_system'] eq 1"><{:BA('pcfunction/cancel',array("function_id"=>$item["function_id"]),'取消系统功能','act','remberBtn')}><else/><{:BA('pcfunction/system',array("function_id"=>$item["function_id"]),'设为系统功能','act','remberBtn')}></if>
+                                <{:BA('pcfunction/delete',array("function_id"=>$item["function_id"]),'删除','act','remberBtn')}>
+                            </td>
+                        </tr>
+                        </if>
+                    </foreach>
+                </table>
+                <div class="smtQr"><input type="submit" value="确认更新" class="smtQrIpt" /></div>
+            </div>
+        </form>
+    </div>
+</div>
+<include  file='public:footer'/>  
+

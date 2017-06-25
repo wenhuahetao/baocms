@@ -1,0 +1,86 @@
+<include file='public:header'/>  
+<script src="__PUBLIC__/js/my97/WdatePicker.js"></script>  
+	<header class="top-fixed bg-yellow bg-inverse">
+		<div class="top-back">
+			<a class="top-addr" href="<{:U('index/index')}>"><i class="icon-angle-left"></i></a>
+		</div>
+		<div class="top-title">
+			商家资金
+		</div>
+		<div class="top-share">
+			<a href="javascript:void(0);" id="cate-btn"></a>
+		</div>
+	</header>
+    <style>
+.zhengwen { margin-top:2rem;}
+.list-media-x { margin-top: 0.0rem;}
+.list-media-x p {margin-top: .01rem; line-height:20px;font-size: 12px;}
+</style>
+
+
+<style>ul { padding-left: 0px;}</style>
+<!-- 筛选TAB -->
+<ul id="shangjia_tab">
+        <li style="width:25%;"><a href="<{:U('money/index')}>"  class="on">商家资金</a></li>
+        <li style="width:25%;"><a href="<{:U('money/detail')}>">资金日志</a></li>
+        <li style="width:25%;"><a href="<{:U('money/cashlogs')}>">提现日志</a></li>
+        <li style="width:25%;"><a href="<{:U('money/cash')}>">申请提现</a></li>
+
+</ul>  
+<div class="blank-10 bg"></div>
+
+
+<style>
+.panel-list li em { font-size:12px;}
+</style>
+<div class="container">
+		<div class="blank-40"></div>
+		<p><span>尊敬的：<{$SHOP.shop_name}>（<{$SHOP.shop_id}>）</span> 
+               <if condition="$counts['money'] gt 0">
+               您总收入：<{:round($counts['money']/100,2)}>元，
+               <php>$zong = $counts['money_day_goods_recipient'] + $counts['money_day_tuan_recipient'] + $counts['money_day_ele_recipient'] + $counts['money_day_ding_recipient'];</php>
+               待确认收货：<{:round($zong/100,2)}>元
+               
+               </if>
+               当前余额：<{:round($MEMBER['gold']/100,2)}>元。
+               <if condition="!empty($MEMBER['frozen'])">
+               冻结金：<{:round($MEMBER['frozen']/100,2)}>元。
+               </if>
+        </p>
+</div>
+<div class="blank-10 bg"></div>
+	<div class="panel-list">
+	<ul>
+		<li><a>今日总收入：<{:round($counts['money_day']/100,2)}>元，昨日总收入：<{:round($counts['money_day_yesterday']/100,2)}>元。</a></li>
+        <li><a>今日商城收入：<{:round($counts['money_day_goods']/100,2)}>元，昨日商城收入：<{:round($counts['money_day_goods_yesterday']/100,2)}>元。</a></li>
+        <li><a>今日团购收入：<{:round($counts['money_day_tuan']/100,2)}>元，昨日团购收入：<{:round($counts['money_day_tuan_yesterday']/100,2)}>元。</a></li>
+        <li><a>今日外卖收入：<{:round($counts['money_day_ele']/100,2)}>元，昨日外卖收入：<{:round($counts['money_day_ele_yesterday']/100,2)}>元。</a></li>
+        <li><a>今日订座收入：<{:round($counts['money_day_ding']/100,2)}>元，昨日订座收入：<{:round($counts['money_day_ding_yesterday']/100,2)}>元。</a></li>
+      	</ul>
+	</div>
+    <div class="blank-10 bg"></div>
+    <div class="panel-list">
+	<ul>
+        <li><a>商城待确认收货：<{:round($counts['money_day_goods_recipient']/100,2)}>元。</a></li>
+        <li><a>团购待确认收货：<{:round($counts['money_day_tuan_recipient']/100,2)}>元。</a></li>
+        <li><a>外卖待确认收货：<{:round($counts['money_day_ele_recipient']/100,2)}>元。</a></li>
+        <li><a>订座待确认收货：<{:round($counts['money_day_ding_recipient']/100,2)}>元。</a></li>
+      	</ul>
+	</div>
+    
+    
+     <div class="blank-10 bg"></div>
+	<div class="panel-list">
+	<ul>
+		<li><a>商城（总）：<{:round($counts['money_goods']/100,2)}>元。</a></li>
+        <li><a>团购（总）：<{:round($counts['money_tuan']/100,2)}>元。</a></li>
+        <li><a>外卖（总）：<{:round($counts['money_ele']/100,2)}>元。</a></li>
+        <li><a>商城（总）：<{:round($counts['money_goods']/100,2)}>元。</a></li>
+        <li><a>订座（总）：<{:round($counts['money_ding']/100,2)}>元。</a></li>
+      	</ul>
+	</div>
+   
+
+
+<include file="public:footer"/>
+

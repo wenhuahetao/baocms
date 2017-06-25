@@ -1,0 +1,46 @@
+<div class="listBox clfx">
+    <div class="menuManage">
+        <form  target="baocms_frm" action="<{:U('pcfunction/create')}>" method="post">
+            <div class="mainScAdd">
+                <div class="tableBox">
+                    <table  bordercolor="#dbdbdb" cellspacing="0" width="100%" border="1px"  style=" border-collapse: collapse; margin:0px; vertical-align:middle; background-color:#FFF;" >
+                        <tr>
+                            <td class="lfTdBt">标题：</td>
+                            <td class="rgTdBt">
+                                <input name="data[title]" type="text" class="scAddTextName w200" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lfTdBt">链接：</td>
+                            <td class="rgTdBt">
+                                <input name="data[url]" type="text" class="scAddTextName w200" />
+                            </td>
+                        </tr>
+                        <tr>
+                        <td class="lfTdBt">是否显示：</td>
+                        <td class="rgTdBt">
+                            <label style="display: inline-block;"><input name="data[is_show]" type="radio" value="1"/>是</label>
+                            <label style="display: inline-block; margin-left: 20px;"><input name="data[is_show]" type="radio" value="0" />否</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="lfTdBt">导航显示：</td>
+                        <td class="rgTdBt">
+                            <label style="display: inline-block;"><input name="data[is_nav]" type="radio" value="1"/>是</label>
+                            <label style="display: inline-block; margin-left: 20px;"><input name="data[is_nav]" type="radio" value="0" />否</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="lfTdBt">排序：</td>
+                        <td class="rgTdBt">
+                            <input name="data[orderby]" type="text" class="scAddTextName w200" />
+                        </td>
+                    </tr>
+                    </table>
+                </div>
+                <div class="smtQr"><input type="submit" value="确认添加" class="smtQrIpt" /></div>
+            </div>
+        </form>
+    </div>
+</div>
+

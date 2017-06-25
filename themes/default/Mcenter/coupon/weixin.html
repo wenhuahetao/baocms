@@ -1,0 +1,41 @@
+<include file="public:header"/>
+<header class="top-fixed bg-yellow bg-inverse">
+	<div class="top-back">
+		<a class="top-addr" href="<{:U('coupon/index')}>"><i class="icon-angle-left"></i></a>
+	</div>
+		<div class="top-title">
+			我的优惠券
+		</div>
+	<div class="top-signed">
+		<include file="public:message"/>
+	</div>
+</header>
+
+<div class="panel-list" style="background: #FBFBFB;">
+	<ul><li><a href="javascript:;">优惠劵验证码：<em style="font-size:16px; color:#F00 "><{$detail['code']}></em></a></li></ul>
+</div>
+
+
+<div class="container">
+	<div class="padding-large">
+            <img width="100%" src="__ROOT__/attachs/<{$file}>" />
+            <p>
+                该二维码提供给对应商家，商家指定员工帐号登录<{$CONFIG[site]['sitename']}>，然后用微信或者浏览器扫描，验证成功即可享受优惠！
+            </p>
+	</div>
+</div>
+
+
+<div class="container text-center">
+              <a class="button bg-blue" href="<{:U('mobile/shop/detail',array('shop_id'=>$detail['shop_id']))}>">商家详情</a>
+              <a class="button bg-blue" href="<{:U('mcenter/coupon/give',array('download_id'=>$detail['download_id']))}>">赠送</a>    
+              <if condition="$detail['is_sms'] eq 0">      
+              <a class="button bg-dot" href="<{:U('mcenter/coupon/sms',array('download_id'=>$detail['download_id']))}>">发送到手机</a> 
+              <else/>
+              <a class="button bg-gray" href="Javascript: void(0)">已发送</a>
+              </if>
+	</div>
+    
+    
+
+<include  file='public:footer'/>
