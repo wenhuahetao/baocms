@@ -15,7 +15,7 @@ if (ini_get('magic_quotes_gpc')) {
     $_GET = stripslashesRecursive($_GET);
     $_POST = stripslashesRecursive($_POST);
 }
-//如果检测不到安装锁定文件，提示安装。
+//如果检测不到安装锁定文件，提示安装1。
 if (!file_exists(BASE_PATH . '/attachs/install.lock')) {
     header("Location: install/index.php");
     die;
